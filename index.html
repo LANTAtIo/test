@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Je t'aime Fati</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffe6e6;
+    font-family: Arial, sans-serif;
+  }
+
+  button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    background-color: #ff4d4d;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+
+  .message {
+    margin-top: 20px;
+    font-size: 32px;
+    color: #ff1a1a;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  .message.show {
+    opacity: 1;
+    transform: translateY(0);
+    animation: heartbeat 1s infinite;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <button onclick="showLove()">Clique-moi ❤️</button>
+  <div class="message" id="loveMessage">Je t'aime Fati 💖</div>
+</div>
+
+<script>
+  function showLove() {
+    const message = document.getElementById('loveMessage');
+    message.classList.add('show');
+  }
+</script>
+
+</body>
+</html>
